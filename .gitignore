@@ -1,0 +1,84 @@
+
+# build
+
+build/
+cmake-build-*/
+out/
+bin/
+obj/
+lib/
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+
+
+# cmake
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+
+# logi
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+
+# dla srodowkis / ide
+
+
+# VSCode
+.vscode/
+
+# CLion / inne JetBrains
+.idea/
+*.iml
+
+# inne
+*.user
+*.workspace
+
+
+# dla systemu
+
+
+# dla maca(os)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# dla windowsa
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# dane apliakcji
+
+
+# pliki z haslami itp
+.env
+.env.*
+
+# bazy danych i pliki tekstowe
+*.sqlite
+*.db
+*.db3
+*.sqlite3
+
+# dane generowane
+uploads/
+cache/
+tmp/
