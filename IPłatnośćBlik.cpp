@@ -1,20 +1,21 @@
 #include <exception>
 using namespace std;
 
-#include "IP³atnoœæBlik.h"
-void IP³atnoœæBlik::wpiszKod() {
+#include "IPlatnoscBlik.h"
+void IPlatnoscBlik::wpiszKod() {
 	throw "Not yet implemented";
 }
 
-void IP³atnoœæBlik::zatwierdŸKod() {
+void IPlatnoscBlik::zatwierdzKod() {
 	throw "Not yet implemented";
 }
 
-void IP³atnoœæBlik::autoryzacja() {
+void IPPlatnoscBlik::autoryzacja() {
 	throw "Not yet implemented";
 }
 
-void IP³atnoœæBlik::œledzenie() {
+void IPlatnoscBlik::sledzenie() {
 	throw "Not yet implemented";
 }
+
 
