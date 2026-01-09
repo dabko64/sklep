@@ -3,28 +3,29 @@
 #include <vector>
 using namespace std;
 
-#include "Zamówienie.h"
+#include "Zamowienie.h"
 #include "Koszyk.h"
-#include "Z³ó¿_zamówienie.h"
+#include "Zloz_zamowienie.h"
 #include "Magazyn.h"
 
-void Zamówienie::utworzZamowienie() {
+void Zamowienie::utworzZamowienie() {
 	throw "Not yet implemented";
 }
 
-void Zamówienie::zmienStatus() {
+void Zamowienie::zmienStatus() {
 	throw "Not yet implemented";
 }
 
-void Zamówienie::przekazDoMagazynu() {
+void Zamowienie::przekazDoMagazynu() {
 	throw "Not yet implemented";
 }
 
-void Zamówienie::sprawdzStatus() {
+void Zamowienie::sprawdzStatus() {
 	throw "Not yet implemented";
 }
 
-void Zamówienie::wybierzMetodePlatnosci() {
+void Zamowienie::wybierzMetodePlatnosci() {
 	throw "Not yet implemented";
 }
+
 
