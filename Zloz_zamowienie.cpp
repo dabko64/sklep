@@ -13,8 +13,9 @@ void Zloz_zamowienie::przejdzDoPlatnosci() {
 	throw "Not yet implemented";
 }
 
-IStrategiaPlatnosci Zloz_zamowienie::wybierzPłatnosc() {
+IStrategiaPlatnosci Zloz_zamowienie::wybierzPlatnosc() {
 	throw "Not yet implemented";
 }
+
 
 
