@@ -2,10 +2,10 @@
 using namespace std;
 
 #include "Koszyk.h"
-#include "Goœæ.h"
+#include "Gosc.h"
 #include "Klient.h"
 #include "Produkt.h"
-#include "Zamówienie.h"
+#include "ZamÃ³wienie.h"
 
 void Koszyk::usunZKoszyka() {
 	throw "Not yet implemented";
@@ -14,4 +14,5 @@ void Koszyk::usunZKoszyka() {
 void Koszyk::zlozZamowienie() {
 	throw "Not yet implemented";
 }
+
 
