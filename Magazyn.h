@@ -5,16 +5,16 @@ using namespace std;
 #define __Magazyn_h__
 
 // #include "Sprzedawca.h"
-// #include "Zamówienie.h"
+// #include "Zamowienie.h"
 // #include "Produkt.h"
 // #include "SystemKurierski.h"
-// #include "SystemP³atniczy.h"
+// #include "SystemPlatniczy.h"
 
 class Sprzedawca;
-class Zamówienie;
+class Zamowienie;
 class Produkt;
 class SystemKurierski;
-class SystemP³atniczy;
+class SystemPlatniczy;
 class Magazyn;
 
 class Magazyn
@@ -22,10 +22,10 @@ class Magazyn
 	private: int _kodWejscia;
 	private: int _liczbaDostepnychProduktow;
 	public: Sprzedawca* _unnamed_Sprzedawca_;
-	public: Zamówienie* _unnamed_Zamówienie_;
+	public: Zamowienie* _unnamed_Zamowienie_;
 	public: Produkt* _unnamed_Produkt_;
 	public: SystemKurierski* _unnamed_SystemKurierski_;
-	public: SystemP³atniczy* _unnamed_SystemP³atniczy_;
+	public: SystemPlatniczy* _unnamed_SystemPlatniczy_;
 
 	public: void przekazanieZamowieniaK();
 
@@ -37,7 +37,8 @@ class Magazyn
 
 	public: void potwierdzZmiane();
 
-	public: void aktualizacjaProduktów();
+	public: void aktualizacjaProduktow();
 };
 
 #endif
+
