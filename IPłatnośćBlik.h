@@ -1,21 +1,22 @@
 #include <exception>
 using namespace std;
 
-#ifndef __IP³atnoœæBlik_h__
-#define __IP³atnoœæBlik_h__
+#ifndef __IPlatnoscBlik_h__
+#define __IPlatnoscBlik_h__
 
-class IP³atnoœæBlik;
+class IPaltnoscBlik;
 
-class IP³atnoœæBlik
+class IPlatnoscBlik
 {
 
 	public: void wpiszKod();
 
-	public: void zatwierdŸKod();
+	public: void zatwierdzKod();
 
 	public: void autoryzacja();
 
-	public: void œledzenie();
+	public: void sledzenie();
 };
 
 #endif
+
