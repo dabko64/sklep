@@ -20,14 +20,14 @@ class Promocje: public IPromocja
 	private: int _procentZnizki;
 	private: string _nazwa;
 	private: date _dataRozpoczecia;
-	private: List<IObserwatorPromocji> _listaObserwatorów;
+	private: List<IObserwatorPromocji> _listaObserwatorow;
 	public: Sprzedawca* _unnamed_Sprzedawca_;
 
 	public: void aktywujPromocje();
 
 	public: void dezaktywujPromocje();
 
-	public: void() zmieñPromocjê();
+	public: void() zmienPromocjÃª();
 
 	public: void powiadom();
 
@@ -39,3 +39,4 @@ class Promocje: public IPromocja
 };
 
 #endif
+
