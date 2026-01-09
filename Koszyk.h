@@ -4,15 +4,15 @@ using namespace std;
 #ifndef __Koszyk_h__
 #define __Koszyk_h__
 
-// #include "Goœæ.h"
+// #include "Gosc.h"
 // #include "Klient.h"
 // #include "Produkt.h"
-// #include "Zamówienie.h"
+// #include "Zamowienie.h"
 
-class Goœæ;
+class Gosc;
 class Klient;
 class Produkt;
-class Zamówienie;
+class Zamowienie;
 class Koszyk;
 
 class Koszyk
@@ -20,10 +20,10 @@ class Koszyk
 	private: int _idProduktu;
 	private: String _nazwaProduktu;
 	private: Bool _czyJestDostepny;
-	public: Goœæ* _unnamed_Goœæ_;
+	public: Gosc* _unnamed_Gosc_;
 	public: Klient* _unnamed_Klient_20;
 	public: Produkt* _unnamed_Produkt_;
-	public: Zamówienie* _unnamed_Zamówienie_;
+	public: Zamowienie* _unnamed_Zamowienie_;
 
 	public: void usunZKoszyka();
 
@@ -31,3 +31,4 @@ class Koszyk
 };
 
 #endif
+
