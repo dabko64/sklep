@@ -2,36 +2,37 @@
 #include <string>
 using namespace std;
 
-#include "SystemP³atniczy.h"
+#include "SystemPlatniczy.h"
 #include "Magazyn.h"
 #include "SystemKurierski.h"
-#include "IStrategiaP³atnoœæ.h"
+#include "IStrategiaPlatnosci.h"
 
-void SystemP³atniczy::przekazaniePlatnosci() {
+void SystemPlatniczy::przekazaniePlatnosci() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::autoryzacjaPlatnosci() {
+void SystemPlatniczy::autoryzacjaPlatnosci() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::aktualizacjaStatusuP() {
+void SystemPlatniczy::aktualizacjaStatusuP() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::wyslijDoBanku() {
+void SystemPlatniczy::wyslijDoBanku() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::wyslijPowiadomienieP() {
+void SystemPlatniczy::wyslijPowiadomienieP() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::œledzenie() {
+void SystemPlatniczy::sledzenie() {
 	throw "Not yet implemented";
 }
 
-void SystemP³atniczy::zrealizujP³atnoœæ(double aKwota) {
+void SystemPlatniczy::zrealizujPlatnosc(double aKwota) {
 	throw "Not yet implemented";
 }
+
 
