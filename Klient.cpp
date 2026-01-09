@@ -6,7 +6,7 @@ using namespace std;
 #include "Koszyk.h"
 #include "Produkt.h"
 #include "Promocje.h"
-#include "Goœæ.h"
+#include "Gosc.h"
 #include "IObserwatorPromocji.h"
 
 void Klient::zalogujSie() {
@@ -32,4 +32,5 @@ void Klient::aktualizu(Promocje aPromocja) {
 void() Klient::aktualizuj(Promocje aPromocja) {
 	throw "Not yet implemented";
 }
+
 
