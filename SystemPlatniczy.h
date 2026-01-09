@@ -2,19 +2,19 @@
 #include <string>
 using namespace std;
 
-#ifndef __SystemP³atniczy_h__
-#define __SystemP³atniczy_h__
+#ifndef __SystemPlatniczy_h__
+#define __SystemPlatniczy_h__
 
 // #include "Magazyn.h"
 // #include "SystemKurierski.h"
-#include "IStrategiaP³atnoœæ.h"
+#include "IStrategiaPlatnosc.h"
 
 class Magazyn;
 class SystemKurierski;
-// __interface IStrategiaP³atnoœæ;
-class SystemP³atniczy;
+// __interface IStrategiaPÂ³atnoÅ“Ã¦;
+class SystemPlatniczy;
 
-class SystemP³atniczy: public IStrategiaP³atnoœæ
+class SystemPlatniczy: public IStrategiaPlatnosc
 {
 	private: int _id_systemu;
 	private: String _nazwa_systemu;
@@ -37,9 +37,10 @@ class SystemP³atniczy: public IStrategiaP³atnoœæ
 
 	public: void wyslijPowiadomienieP();
 
-	public: void œledzenie();
+	public: void Å“ledzenie();
 
-	public: void zrealizujP³atnoœæ(double aKwota);
+	public: void zrealizujPÂ³atnoÅ“Ã¦(double aKwota);
 };
 
 #endif
+
