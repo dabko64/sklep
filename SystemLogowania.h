@@ -2,15 +2,15 @@
 #include <string>
 using namespace std;
 
-#ifndef __StstemLogowania_h__
-#define __StstemLogowania_h__
+#ifndef __SystemLogowania_h__
+#define __SystemLogowania_h__
 
 // #include "Klient.h"
 
 class Klient;
-class StstemLogowania;
+class SystemLogowania;
 
-class StstemLogowania
+class SystemLogowania
 {
 	private: string _dane;
 	private: string _haslo;
@@ -26,3 +26,4 @@ class StstemLogowania
 };
 
 #endif
+
