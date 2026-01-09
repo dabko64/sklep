@@ -1,16 +1,17 @@
 #include <exception>
 using namespace std;
 
-#include "IP³atnoœæPrzelew.h"
-void IP³atnoœæPrzelew::pobierzDaneOdbiorcy() {
+#include "IPlatnoscPrzelew.h"
+void IPlatnoscPrzelew::pobierzDaneOdbiorcy() {
 	throw "Not yet implemented";
 }
 
-void IP³atnoœæPrzelew::autoryzacja() {
+void IPlatnoscPrzelew::autoryzacja() {
 	throw "Not yet implemented";
 }
 
-void IP³atnoœæPrzelew::œledzenie() {
+void IPlatnoscPrzelew::sledzenie() {
 	throw "Not yet implemented";
 }
+
 
