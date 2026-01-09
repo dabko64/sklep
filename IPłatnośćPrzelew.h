@@ -1,19 +1,20 @@
 #include <exception>
 using namespace std;
 
-#ifndef __IP³atnoœæPrzelew_h__
-#define __IP³atnoœæPrzelew_h__
+#ifndef __IPlatnoscPrzelew_h__
+#define __IPlatnoscPrzelew_h__
 
-class IP³atnoœæPrzelew;
+class IPlatnoscPrzelew;
 
-class IP³atnoœæPrzelew
+class IPlatnoscPrzelew
 {
 
 	public: void pobierzDaneOdbiorcy();
 
 	public: void autoryzacja();
 
-	public: void œledzenie();
+	public: void sledzenie();
 };
 
 #endif
+
