@@ -3,10 +3,10 @@ using namespace std;
 
 #include "Magazyn.h"
 #include "Sprzedawca.h"
-#include "Zamówienie.h"
+#include "Zamowienie.h"
 #include "Produkt.h"
 #include "SystemKurierski.h"
-#include "SystemP³atniczy.h"
+#include "SystemPlatniczy.h"
 
 void Magazyn::przekazanieZamowieniaK() {
 	throw "Not yet implemented";
@@ -28,7 +28,8 @@ void Magazyn::potwierdzZmiane() {
 	throw "Not yet implemented";
 }
 
-void Magazyn::aktualizacjaProduktów() {
+void Magazyn::aktualizacjaProduktow() {
 	throw "Not yet implemented";
 }
+
 
