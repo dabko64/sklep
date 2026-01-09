@@ -8,18 +8,18 @@ using namespace std;
 // #include "Koszyk.h"
 // #include "Produkt.h"
 #include "Promocje.h"
-#include "Goœæ.h"
+#include "Gosc.h"
 #include "IObserwatorPromocji.h"
 
 class StstemLogowania;
 class Koszyk;
 class Produkt;
 // class Promocje;
-// class Goœæ;
+// class Gosc;
 // __interface IObserwatorPromocji;
 class Klient;
 
-class Klient: public Goœæ, public IObserwatorPromocji, public Promocje
+class Klient: public Gosc, public IObserwatorPromocji, public Promocje
 {
 	private: String _imie;
 	private: String _nazwisko;
@@ -46,3 +46,4 @@ class Klient: public Goœæ, public IObserwatorPromocji, public Promocje
 };
 
 #endif
+
