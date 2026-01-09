@@ -1,20 +1,21 @@
 #include <exception>
 using namespace std;
 
-#ifndef __IStrategiaP³atnoœæ_h__
-#define __IStrategiaP³atnoœæ_h__
+#ifndef __IStrategiaPlatnosc_h__
+#define __IStrategiaPlatnosc_h__
 
-#include "IP³atnoœæPrzelew.h"
-#include "IP³atnoœæBlik.h"
+#include "IPlatnoscPrzelew.h"
+#include "IPlatnoscBlik.h"
 
-// class IP³atnoœæPrzelew;
-// class IP³atnoœæBlik;
-__interface IStrategiaP³atnoœæ;
+// class IPlatnoscPrzelew;
+// class IPlatnoscBlik;
+__interface IStrategiaPlatnosc;
 
-__interface IStrategiaP³atnoœæ: public IP³atnoœæPrzelew, public IP³atnoœæBlik
+__interface IStrategiaPlatnosc: public IPlatnoscPrzelew, public IPlatnoscBlik
 {
 
-	public: virtual void zrealizujP³atnoœæ(double aKwota) = 0;
+	public: virtual void zrealizujPlatnosc(double aKwota) = 0;
 };
 
 #endif
+
