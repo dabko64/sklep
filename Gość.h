@@ -1,8 +1,8 @@
 #include <exception>
 using namespace std;
 
-#ifndef __Goœæ_h__
-#define __Goœæ_h__
+#ifndef __Gosc_h__
+#define __Gosc_h__
 
 // #include "Koszyk.h"
 #include "Promocje.h"
@@ -11,9 +11,9 @@ using namespace std;
 class Koszyk;
 // class Promocje;
 // __interface IObserwatorPromocji;
-class Goœæ;
+class Gosc;
 
-class Goœæ: public IObserwatorPromocji, public Promocje
+class Gosc: public IObserwatorPromocji, public Promocje
 {
 	private: Bool _akceptacjaCookies;
 	private: int _idSesji;
@@ -34,3 +34,4 @@ class Goœæ: public IObserwatorPromocji, public Promocje
 };
 
 #endif
+
