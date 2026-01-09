@@ -7,7 +7,7 @@ using namespace std;
 
 // #include "Zamówienie.h"
 
-class Zamówienie;
+class Zamowienie;
 class Zloz_zamowienie;
 
 class Zloz_zamowienie
@@ -27,4 +27,5 @@ class Zloz_zamowienie
 };
 
 #endif
+
 
