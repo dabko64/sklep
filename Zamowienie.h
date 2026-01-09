@@ -3,26 +3,26 @@
 #include <vector>
 using namespace std;
 
-#ifndef __Zam體ienie_h__
-#define __Zam體ienie_h__
+#ifndef __Zam贸wienie_h__
+#define __Zam贸wienie_h__
 
 // #include "Koszyk.h"
-// #include "Z丑縚zam體ienie.h"
+// #include "Z艂贸偶_zam贸wienie.h"
 #include "Magazyn.h"
 
 class Koszyk;
-class Z丑縚zam體ienie;
+class Z艂贸偶_zam贸wienie;
 class Magazyn;
-class Zam體ienie;
+class Zam贸wienie;
 
-class Zam體ienie
+class Zam贸wienie
 {
 	private: double _idZamowienia;
 	private: date _dataZlozenia;
 	private: string _status;
 	private: double _kwota;
 	public: Koszyk* _unnamed_Koszyk_;
-	public: Z丑縚zam體ienie* _unnamed_Z丑縚zam體ienie_;
+	public: Z艂贸偶_zam贸wienie* _unnamed_Z艂贸偶_zam贸wienie_;
 	public: std::vector<Magazyn*> _unnamed_Magazyn_;
 
 	public: void utworzZamowienie();
