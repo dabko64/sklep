@@ -28,7 +28,7 @@ class Klient: public Gosc, public IObserwatorPromocji, public Promocje
 	private: int _nrTelefonu;
 	private: String _haslo;
 	private: double _id;
-	public: StstemLogowania* _unnamed_StstemLogowania_;
+	public: SystemLogowania* _unnamed_StstemLogowania_;
 	public: Koszyk* _unnamed_Koszyk_21;
 	public: Produkt* _unnamed_Produkt_;
 
@@ -40,10 +40,11 @@ class Klient: public Gosc, public IObserwatorPromocji, public Promocje
 
 	public: void przejdzDoZamowienia();
 
-	public: void aktualizu(Promocje aPromocja);
+	public: void aktualizuj(Promocje aPromocja);
 
 	public: void() aktualizuj(Promocje aPromocja);
 };
 
 #endif
+
 
