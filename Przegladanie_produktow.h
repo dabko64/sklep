@@ -1,12 +1,12 @@
 #include <exception>
 using namespace std;
 
-#ifndef __Przegl¹danie_produktów_h__
-#define __Przegl¹danie_produktów_h__
+#ifndef __Przegladanie_produktow_h__
+#define __Przegladanie_produktow_h__
 
-class Przegl¹danie_produktów;
+class Przegladanie_produktow;
 
-class Przegl¹danie_produktów
+class Przegladanie_produktow
 {
 	private: double _id_produktu;
 	private: bool _dostepnosc_produktu;
@@ -19,3 +19,4 @@ class Przegl¹danie_produktów
 };
 
 #endif
+
