@@ -2,22 +2,23 @@
 #include <string>
 using namespace std;
 
-#include "StstemLogowania.h"
+#include "SystemLogowania.h"
 #include "Klient.h"
 
-void StstemLogowania::sprawdzPoprawnosc() {
+void SystemLogowania::sprawdzPoprawnosc() {
 	throw "Not yet implemented";
 }
 
-void StstemLogowania::przejdzDoKonta() {
+void SystemLogowania::przejdzDoKonta() {
 	throw "Not yet implemented";
 }
 
-void StstemLogowania::zatwierdzKonto() {
+void SystemLogowania::zatwierdzKonto() {
 	throw "Not yet implemented";
 }
 
-void StstemLogowania::autoryzacja() {
+void SystemLogowania::autoryzacja() {
 	throw "Not yet implemented";
 }
+
 
