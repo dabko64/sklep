@@ -1,28 +1,29 @@
 #include <exception>
 using namespace std;
 
-#include "Goœæ.h"
+#include "Gosc.h"
 #include "Koszyk.h"
 #include "Promocje.h"
 #include "IObserwatorPromocji.h"
 
-void Goœæ::stworzKonto() {
+void Gosc::stworzKonto() {
 	throw "Not yet implemented";
 }
 
-void Goœæ::wybierzHaslo() {
+void Gosc::wybierzHaslo() {
 	throw "Not yet implemented";
 }
 
-void Goœæ::wybierzLogin() {
+void Gosc::wybierzLogin() {
 	throw "Not yet implemented";
 }
 
-void Goœæ::czyIstniejeTakiLogin() {
+void Gosc::czyIstniejeTakiLogin() {
 	throw "Not yet implemented";
 }
 
-void() Goœæ::aktualizuj(Promocje aPromocja) {
+void() Gosc::aktualizuj(Promocje aPromocja) {
 	throw "Not yet implemented";
 }
+
 
