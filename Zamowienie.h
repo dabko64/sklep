@@ -22,7 +22,7 @@ class Zamowienie
 	private: string _status;
 	private: double _kwota;
 	public: Koszyk* _unnamed_Koszyk_;
-	public: Złóż_zamowienie* _unnamed_Złóż_zamowienie_;
+	public: Zloz_zamowienie* _unnamed_Zloz_zamowienie_;
 	public: std::vector<Magazyn*> _unnamed_Magazyn_;
 
 	public: void utworzZamowienie();
@@ -37,4 +37,5 @@ class Zamowienie
 };
 
 #endif
+
 
