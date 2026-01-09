@@ -3,7 +3,7 @@ using namespace std;
 
 #include "SystemKurierski.h"
 #include "Magazyn.h"
-#include "SystemP³atniczy.h"
+#include "SystemPlatniczy.h"
 
 void SystemKurierski::utworzeniePrzesylki() {
 	throw "Not yet implemented";
@@ -21,7 +21,8 @@ void SystemKurierski::wyslijPowiadomienieK() {
 	throw "Not yet implemented";
 }
 
-void SystemKurierski::przekazanieZamówienia() {
+void SystemKurierski::przekazanieZamÃ³wienia() {
 	throw "Not yet implemented";
 }
+
 
