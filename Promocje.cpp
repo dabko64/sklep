@@ -15,7 +15,7 @@ void Promocje::dezaktywujPromocje() {
 	throw "Not yet implemented";
 }
 
-void() Promocje::zmieñPromocjê() {
+void() Promocje::zmienPromocje() {
 	throw "Not yet implemented";
 }
 
@@ -34,4 +34,5 @@ void Promocje::usunObserwatora(IObserwatorPromocji aO) {
 void Promocje::powiadomienie() {
 	throw "Not yet implemented";
 }
+
 
