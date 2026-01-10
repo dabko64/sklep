@@ -1,36 +1,54 @@
-#include <exception>
+#include "Klient.h"
+#include <iostream>
+
 using namespace std;
 
-#include "Klient.h"
-#include "StstemLogowania.h"
-#include "Koszyk.h"
-#include "Produkt.h"
-#include "Promocje.h"
-#include "Gosc.h"
-#include "IObserwatorPromocji.h"
+//konstruktor
+Klient::Klient(const string& l,
+               const string& h,
+               const string& e,
+               const string& i,
+               const string& n,
+               const string& a,
+               int nrTel)
+    : login(l),
+      haslo(h),
+      email(e),
+      imie(i),
+      nazwisko(n),
+      adres(a),
+      nrTelefonu(nrTel) {}
+
+string Klient::getLogin() const {
+    return login;
+}
+
+bool Klient::sprawdzHaslo(const string& h) const {
+    return haslo == h;
+}
 
 void Klient::zalogujSie() {
-	throw "Not yet implemented";
+    cout << "klient " << login << " zalogowany" << endl;
 }
 
 void Klient::wylogujSie() {
-	throw "Not yet implemented";
+    cout << "klient " << login << " wylogowany" << endl;
 }
 
 void Klient::przejdzDoKoszyka() {
-	throw "Not yet implemented";
+    cout << "przechodzenie do koszyka..." << endl;
 }
 
 void Klient::przejdzDoZamowienia() {
-	throw "Not yet implemented";
+    cout << "przechodzenie do zamowienia..." << endl;
 }
 
-void Klient::aktualizu(Promocje aPromocja) {
-	throw "Not yet implemented";
+//Observer pattern
+void Klient::aktualizuj(const string& promocja) {
+    cout << "promocja dla: "
+         << login << ": "
+         << promocja << endl;
 }
 
-void() Klient::aktualizuj(Promocje aPromocja) {
-	throw "Not yet implemented";
-}
 
 
