@@ -1,48 +1,45 @@
-#include <exception>
-using namespace std;
+#ifndef KLIENT_H
+#define KLIENT_H
 
-#ifndef __Klient_h__
-#define __Klient_h__
-
-// #include "StstemLogowania.h"
-// #include "Koszyk.h"
-// #include "Produkt.h"
-#include "Promocje.h"
+#include <string>
 #include "Gosc.h"
 #include "IObserwatorPromocji.h"
 
-class StstemLogowania;
-class Koszyk;
-class Produkt;
-// class Promocje;
-// class Gosc;
-// __interface IObserwatorPromocji;
-class Klient;
+class Klient : public Gosc, public IObserwatorPromocji {
+private:
+    std::string login;
+    std::string haslo;
+    std::string email;
+    std::string imie;
+    std::string nazwisko;
+    std::string adres;
+    int nrTelefonu;
 
-class Klient: public Gosc, public IObserwatorPromocji, public Promocje
-{
-	private: String _imie;
-	private: String _nazwisko;
-	private: String _email;
-	private: String _adres;
-	private: int _nrTelefonu;
-	private: String _haslo;
-	private: double _id;
-	public: SystemLogowania* _unnamed_StstemLogowania_;
-	public: Koszyk* _unnamed_Koszyk_21;
-	public: Produkt* _unnamed_Produkt_;
+public:
+    //destruktor (dziedziczenie)
+    ~Klient() noexcept override = default;
 
-	public: void zalogujSie();
+    //konstruktor
+    Klient(const std::string& l,
+           const std::string& h,
+           const std::string& e,
+           const std::string& i,
+           const std::string& n,
+           const std::string& a,
+           int nrTel);
 
-	public: void wylogujSie();
+    //logowanie
+    std::string getLogin() const;
+    bool sprawdzHaslo(const std::string& h) const;
 
-	public: void przejdzDoKoszyka();
+    //akcje klienta
+    void zalogujSie();
+    void wylogujSie();
+    void przejdzDoKoszyka();
+    void przejdzDoZamowienia();
 
-	public: void przejdzDoZamowienia();
-
-	public: void aktualizuj(Promocje aPromocja);
-
-	public: void() aktualizuj(Promocje aPromocja);
+    //obserwator promocji (Observer pattern)
+    void aktualizuj(const std::string& promocja) override;
 };
 
 #endif
