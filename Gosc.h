@@ -28,6 +28,8 @@ class Gosc: public IObserwatorPromocji, public Promocje
     string adresIP;
     string zrodloOdwiedzin;
 	private: Bool _akceptacjaCookies;
+	string login;  
+	string haslo;
 	private: int _idSesji;
 	private: String _adresIP;
 	private: String _zdrodloOdwiedzin;
