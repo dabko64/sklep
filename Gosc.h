@@ -13,8 +13,20 @@ class Koszyk;
 // __interface IObserwatorPromocji;
 class Gosc;
 
+// prosty interfejs obserwatora (minimalny)
+// class IObserwatorPromocji {
+// public:
+//     virtual ~IObserwatorPromocji() = default;
+//     virtual void aktualizuj(const string& promocja) = 0;
+// };
+
 class Gosc: public IObserwatorPromocji, public Promocje
 {
+	protected:
+    bool akceptacjaCookies;
+    int idSesji;
+    string adresIP;
+    string zrodloOdwiedzin;
 	private: Bool _akceptacjaCookies;
 	private: int _idSesji;
 	private: String _adresIP;
@@ -22,6 +34,7 @@ class Gosc: public IObserwatorPromocji, public Promocje
 	private: date _dataWejscia;
 	public: Koszyk* _unnamed_Koszyk_;
 
+	public: Gosc();
 	public: void stworzKonto();
 
 	public: void wybierzHaslo();
@@ -31,6 +44,7 @@ class Gosc: public IObserwatorPromocji, public Promocje
 	public: void czyIstniejeTakiLogin();
 
 	public: void() aktualizuj(Promocje aPromocja);
+	//void aktualizuj(const std::string& promocja) override;
 };
 
 #endif
