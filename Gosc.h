@@ -1,53 +1,36 @@
-#include <exception>
-using namespace std;
 
 #ifndef __Gosc_h__
 #define __Gosc_h__
 
-// #include "Koszyk.h"
-#include "Promocje.h"
+#include <string>
+#include <iostream>
 #include "IObserwatorPromocji.h"
-
-class Koszyk;
-// class Promocje;
-// __interface IObserwatorPromocji;
-class Gosc;
-
 // prosty interfejs obserwatora (minimalny)
 // class IObserwatorPromocji {
 // public:
 //     virtual ~IObserwatorPromocji() = default;
 //     virtual void aktualizuj(const string& promocja) = 0;
 // };
-
-class Gosc: public IObserwatorPromocji, public Promocje
-{
-	protected:
+class Gosc : public IObserwatorPromocji {
+protected: // Zmieniono z private na protected!
     bool akceptacjaCookies;
-    int idSesji;
-    string adresIP;
-    string zrodloOdwiedzin;
-	private: Bool _akceptacjaCookies;
-	string login;  
-	string haslo;
-	private: int _idSesji;
-	private: String _adresIP;
-	private: String _zdrodloOdwiedzin;
-	private: date _dataWejscia;
-	public: Koszyk* _unnamed_Koszyk_;
+    std::string login;
+    std::string haslo;
 
-	public: Gosc();
-	public: void stworzKonto();
-
-	public: void wybierzHaslo();
-
-	public: void wybierzLogin();
-
-	public: void czyIstniejeTakiLogin();
-
-	public: void() aktualizuj(Promocje aPromocja);
-	//void aktualizuj(const std::string& promocja) override;
+    // Poniższe linie zostawiam jako komentarz, bo C++ nie zna tych typów:
+   /*
+   private: int _idSesji;
+   private: String _adresIP;
+   private: String _zdrodloOdwiedzin;
+   private: date _dataWejscia;
+   */
+public:
+    Gosc();
+    void stworzKonto();
+    void wybierzHaslo();
+    void wybierzLogin();
+    bool czyIstniejeTakiLogin(const std::string& login) const;
+    void aktualizuj(const std::string& promocja) override;
 };
 
 #endif
-
