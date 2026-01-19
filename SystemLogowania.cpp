@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include "Sprzedawca.h"
 
 using namespace std;
 
@@ -11,13 +12,14 @@ using namespace std;
 Klient* SystemLogowania::menu() {
     int wybor;
     cout << "1 - rejestracja\n";
-    cout << "2 - logowanie\n";
+    cout << "2 - logowanie (klient)\n";
+    cout << "3 - logowanie (sprzedawca)\n"; // NOWA OPCJA
     cout << "wybor: ";
     // Zabezpieczenie przed wpisaniem litery w menu
     if (!(cin >> wybor)) {
         cin.clear(); // czysci stan bledu
         cin.ignore(1000, '\n'); // usuwa bledne znaki
-        cout << "Blad: Wpisz cyfre 1 lub 2!\n";
+        cout << "Blad: Wpisz cyfre 1, 2 lub 3!\n";
         return nullptr;
     }
 
@@ -27,13 +29,52 @@ Klient* SystemLogowania::menu() {
     }
 
     if (wybor == 2) {
-        return logowanie();
+        return logowanie();// zwraca Klient*
     }
 
-    cout << "zly wybor\n";
-    return nullptr;
-}
+    if (wybor == 3) {
+        Sprzedawca* s = logowanieSprzedawcy(); // Wywołuje nową metodę
+        if (s) {
+            int opcjaS = 0;
+            while (opcjaS != 5) { // Petla menu sprzedawcy
+                cout << "\n--- PANEL ZARZADZANIA ---" << endl;
+                cout << "1 - Dodaj produkt" << endl;
+                cout << "2 - Usun produkt" << endl;
+                cout << "3 - Zmien cene" << endl;       // NOWE
+                cout << "4 - Zmien ilosc (magazyn)" << endl; // NOWE
+                cout << "5 - Wyloguj" << endl;
+                cout << "Wybor: ";
 
+                if (!(cin >> opcjaS)) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
+
+                if (opcjaS == 1) {
+                    s->dodawanieProduktow();
+                }
+                else if (opcjaS == 2) {
+                    s->usuwanieProduktow();
+                }
+                else if (opcjaS == 3) {
+                    s->modyfikacjaCen();
+                }
+                else if (opcjaS == 4) {
+                    s->zarzadzanieProduktami();
+                }
+                else if (opcjaS == 5 ) {
+                    cout << "Wylogowywanie..." << endl;
+                }
+                else {
+                    cout << "Niepoprawna opcja!" << endl;
+                }
+            }
+            delete s; // Sprzatanie pamieci po wylogowaniu
+        }
+        return nullptr; // Powrot do glownego menu (1-rejestracja, 2-logowanie...)
+    }
+}
 // Metoda sprawdzająca czy login już istnieje w pliku
 bool SystemLogowania::czyIstniejeTakiLogin(const string& login) {
     ifstream plik("klienci.txt");
@@ -171,7 +212,6 @@ Klient* SystemLogowania::logowanie() {
 }
 
 
-
 // sprawdzenie z pliku txt
 bool SystemLogowania::sprawdzWLinii(const string& linia,
     const string& login,
@@ -206,6 +246,51 @@ bool SystemLogowania::sprawdzWLinii(const string& linia,
     return false;
 }
 
+Sprzedawca* SystemLogowania::logowanieSprzedawcy() {
+    string login, haslo;
+    cout << "--- LOGOWANIE SPRZEDAWCY ---\n";
+    cout << "login: "; cin >> login;
+    cout << "haslo: "; cin >> haslo;
+
+    ifstream plik("sprzedawcy.txt");
+    if (!plik) {
+        cout << "Brak pliku sprzedawcy.txt\n";
+        return nullptr;
+    }
+
+    string linia;
+    while (getline(plik, linia)) {
+        Sprzedawca tmp("", "", "", 0);
+        if (sprawdzWLiniiSprzedawcy(linia, login, haslo, tmp)) {
+            cout << "Zalogowano jako sprzedawca: " << tmp.getLogin() << endl;
+            plik.close();
+            return new Sprzedawca(tmp);
+        }
+    }
+    plik.close();
+    cout << "Bledny login lub haslo sprzedawcy!\n";
+    return nullptr;
+}
+
+bool SystemLogowania::sprawdzWLiniiSprzedawcy(const string& linia, const string& login, const string& haslo, Sprzedawca& sprzedawcaOut) {
+    if (linia.empty()) return false;
+    stringstream ss(linia);
+    string l, h, e, k;
+
+    getline(ss, l, ';');
+    getline(ss, h, ';');
+    getline(ss, e, ';');
+    getline(ss, k, ';');
+
+    if (l == login && h == haslo) {
+        int kod = 0;
+        try { if (!k.empty()) kod = stoi(k); }
+        catch (...) {}
+        sprzedawcaOut = Sprzedawca(l, h, e, kod);
+        return true;
+    }
+    return false;
+}
 // --- Zakomentowane metody Paradigm ---
 /*
 void StstemLogowania::sprawdzPoprawnosc() { throw "Not yet implemented"; }

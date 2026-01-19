@@ -5,12 +5,14 @@
 
 
 class Klient; // Informujemy, że klasa Klient istnieje
+class Sprzedawca; // NOWA KLASA
 
 class SystemLogowania {
 public:
     // menu glowne: rejestracja lub logowanie
     Klient* menu();
-
+	Sprzedawca* logowanieSprzedawcy(); // NOWA METODA
+    
 private:
     // rejestracja nowego klienta (zapis do pliku)
     void rejestracja();
@@ -26,6 +28,10 @@ private:
     bool czyIstniejeTakiLogin(const std::string& login);
     // Weryfikacja unikalności adresu e-mail
     bool czyIstniejeTakiEmail(const std::string& email);
+   
+    // NOWA METODA POMOCNICZA DLA SPRZEDAWCY
+    bool sprawdzWLiniiSprzedawcy(const std::string& linia, const std::string& login, const std::string& haslo, Sprzedawca& sprzedawcaOut);
+   
 };
 
 // --- Zakomentowane struktury z Visual Paradigm ---
