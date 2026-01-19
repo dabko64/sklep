@@ -18,8 +18,8 @@ class Koszyk;
 class Koszyk
 {
 	private: int _idProduktu;
-	private: String _nazwaProduktu;
-	private: Bool _czyJestDostepny;
+	private: string _nazwaProduktu;
+	private: bool _czyJestDostepny;
 	public: Gosc* _unnamed_Gosc_;
 	public: Klient* _unnamed_Klient_20;
 	public: Produkt* _unnamed_Produkt_;
