@@ -14,8 +14,8 @@ class Sprzedawca;
 
 class Sprzedawca
 {
-	private: String _email;
-	private: String _haslo;
+	private: string _email;
+	private: string _haslo;
 	private: int _kodWeryfikacyjny;
 	public: Magazyn* _unnamed_Magazyn_;
 	public: std::vector<Promocje*> _unnamed_Promocje_;
