@@ -4,6 +4,7 @@
 #include <string>
 #include "Gosc.h"
 #include "IObserwatorPromocji.h"
+#include "Koszyk.h"
 
 // Klient dziedziczy po Gosc, a Gosc już dziedziczy po IObserwatorPromocji.
 // Dlatego wystarczy: class Klient : public Gosc
@@ -16,6 +17,7 @@ private:
     std::string nazwisko;
     std::string adres;
     int nrTelefonu;
+    Koszyk* _koszyk;
 
 public:
     // destruktor
@@ -30,6 +32,7 @@ public:
         const std::string& a,
         int nrTel);
 
+    Klient();
     // metody dostępu
     std::string getLogin() const;
     bool sprawdzHaslo(const std::string& h) const;
@@ -39,6 +42,7 @@ public:
     void wylogujSie();
     void przejdzDoKoszyka();
     void przejdzDoZamowienia();
+    Koszyk* getKoszyk();
 
     // Nadpisanie metody z interfejsu (poprzez Gosc)
     void aktualizuj(const std::string& promocja) override;

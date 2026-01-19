@@ -82,6 +82,8 @@ void Przegladanie_produktow::wyszukajProdukt() {
     plik.close();
 }
 
+void Przegladanie_produktow::koszyk(){
+}
 
 
 //void Przeglądanie_produktów::dodajDoKoszyka() {

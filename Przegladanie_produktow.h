@@ -1,6 +1,7 @@
 #ifndef __Przegladanie_produktow_h__
 #define __Przegladanie_produktow_h__
 #include <string>
+#include "Koszyk.h"
 
 class Przegldanie_produktow;
 
@@ -13,6 +14,7 @@ class Przegladanie_produktow
 		// Metoda wyświetlająca wszystkie produkty z pliku produkty.txt
 		void wyswietlWszystkie();
 		void wyszukajProdukt();
+		void koszyk();
 		//void dodajDoKoszyka();
 		//*void przejdzDoKoszyka();
 };

@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    cout << "--- TEST MODULU ZAMOWIENIE (TRYB IZOLOWANY) ---" << endl;
+    cout << "--- TEST MODULU ZAMOWIENIE ---" << endl;
 
     // 1. Tworzymy zamowienie "na sztywno"
     cout << "Tworzenie obiektu..." << endl;

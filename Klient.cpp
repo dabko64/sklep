@@ -3,6 +3,10 @@
 
 using namespace std;
 
+Klient::Klient() {
+    _koszyk = new Koszyk(this); 
+}
+
 // konstruktor
 Klient::Klient(const string& l,
     const string& h,
@@ -52,3 +56,5 @@ void Klient::aktualizuj(const string& promocja) {
         << login << ": "
         << promocja << endl;
 }
+
+Koszyk* Klient::getKoszyk() { return _koszyk; }

@@ -1,46 +1,3 @@
-#include <exception>
-using namespace std;
-
-#ifndef __Koszyk_h__
-#define __Koszyk_h__
-
-// #include "Gosc.h"
-// #include "Klient.h"
-// #include "Produkt.h"
-// #include "Zamowienie.h"
-
-class Gosc;
-class Klient;
-class Produkt;
-class Zamowienie;
-class Koszyk;
-
-class Koszyk
-{
-	private: int _idProduktu;
-	private: string _nazwaProduktu;
-	private: bool _czyJestDostepny;
-	public: Gosc* _unnamed_Gosc_;
-	public: Klient* _unnamed_Klient_20;
-	public: Produkt* _unnamed_Produkt_;
-	public: Zamowienie* _unnamed_Zamowienie_;
-
-	public: void usunZKoszyka();
-
-	public: void zlozZamowienie();
-};
-
-#endif
-
-
-
-
-
-
-
-
-
-/*
 #ifndef __Koszyk_h__
 #define __Koszyk_h__
 
@@ -62,27 +19,25 @@ private:
         int ilosc = 0;
     };
 
-    Klient* _wlasciciel = nullptr;              // tylko ten klient może dodawać
+    Klient* _wlasciciel = nullptr;
     std::vector<Pozycja> _pozycje;
 
-    // TYLKO Klient może wywołać (bo private + friend)
+    // Metoda prywatna - tylko Klient (friend) może dodawać produkty
     void dodajProdukt(Produkt* produkt, int ilosc);
 
 public:
-    // ważne: tworzymy koszyk przypisany do klienta
     explicit Koszyk(Klient* wlasciciel);
+    ~Koszyk(); // Destruktor do sprzątania
 
-    void usunZKoszyka(Produkt* produkt, int ilosc = 1);
+    void usunZKoszyka(std::string nazwaProduktu);
     void wyczysc();
+    
+    // Nowe metody do obsługi interfejsu
+    void wyswietlZawartosc() const;
+    double pobierzWartoscCalkowita() const;
+    bool czyPusty() const;
 
-    // opcjonalnie: żebyś mógł policzyć sumę itp.
-    int ilePozycji() const;
-
-    // jeśli masz Zamowienie w projekcie, możesz tu zwracać wskaźnik/obiekt
-    void zlozZamowienie();
-
-    friend class Klient; // <-- KLUCZ: tylko Klient ma dostęp do dodajProdukt()
+    friend class Klient; 
 };
 
 #endif
-*/

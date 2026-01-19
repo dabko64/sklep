@@ -1,35 +1,32 @@
 #include <exception>
-#include <string>
 using namespace std;
 
 #ifndef __Produkt_h__
 #define __Produkt_h__
 
-// #include "Klient.h"
-// #include "Koszyk.h"
-// #include "Magazyn.h"
+#include <string>
 
 class Klient;
 class Koszyk;
 class Magazyn;
 class Produkt;
+class Produkt {
+private:
+    std::string _nazwa;
+    double _cena;
+    int _iloscWMagazynie;
 
-class Produkt
-{
-	private: int _id;
-	private: string _nazwa;
-	private: bool _dostepnosc;
-	public: Klient* _unnamed_Klient_;
-	public: Koszyk* _unnamed_Koszyk_;
-	public: Magazyn* _unnamed_Magazyn_;
+public:
+    // Konstruktor
+    Produkt(std::string nazwa, double cena, int ilosc);
 
-	public: void dodajDoKoszyka();
+    // Gettery (pobieranie danych)
+    std::string getNazwa() const;
+    double getCena() const;
+    int getIlosc() const;
 
-	public: void usunZKoszyka();
-
-	public: void sprawdzDostepnosc();
-
-	public: void przegladaj();
+    // Metody modyfikujące
+    void zmniejszStan(int ile);
 };
 
 #endif

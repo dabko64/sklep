@@ -1,7 +1,9 @@
 #include "SystemLogowania.h"
 #include "Klient.h"
 #include "Przegladanie_produktow.h"
-#include "Sprzedawca.h" // Dodane, aby kompilator znał klasę sprzedawcy
+#include "Sprzedawca.h"
+#include "Koszyk.h"
+ // Dodane, aby kompilator znał klasę sprzedawcy
 //#include "Zamowienie.h"
 #include <iostream>
 
@@ -24,13 +26,15 @@ int main() {
     aktualnyUzytkownik->zalogujSie();
 
     int akcja = 0;
-    while (akcja != 3) {
-        cout << "\n1 - Przegladaj produkty\n2 - Szukaj produktu po nazwie\n3 - Wyjdz\nWybor: ";
+    while (akcja != 4) {
+        cout << "\n1 - Przegladaj produkty\n2 - Szukaj produktu po nazwie\n3 - Koszyk\n4 - Wyjdz\nWybor: ";
         cin >> akcja;
 
         Przegladanie_produktow p;
         if (akcja == 1) p.wyswietlWszystkie();
         else if (akcja == 2) p.wyszukajProdukt();
+        else if (akcja == 3) aktualnyUzytkownik->getKoszyk()->wyswietlZawartosc();;
+
     }
 
     // Wywoływanie metod Klienta

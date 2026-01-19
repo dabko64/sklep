@@ -1,25 +1,34 @@
-#include <exception>
-#include <string>
+#include "Produkt.h"
+#include <iostream>
+
 using namespace std;
 
-#include "Produkt.h"
-#include "Klient.h"
-#include "Koszyk.h"
-#include "Magazyn.h"
-
-void Produkt::dodajDoKoszyka() {
-	throw "Not yet implemented";
+// Implementacja konstruktora
+Produkt::Produkt(string nazwa, double cena, int ilosc) 
+    : _nazwa(nazwa), _cena(cena), _iloscWMagazynie(ilosc) 
+{
+    // Lista inicjalizacyjna powyżej przypisuje wartości do zmiennych prywatnych
 }
 
-void Produkt::usunZKoszyka() {
-	throw "Not yet implemented";
+// Implementacja getterów
+string Produkt::getNazwa() const {
+    return _nazwa;
 }
 
-void Produkt::sprawdzDostepnosc() {
-	throw "Not yet implemented";
+double Produkt::getCena() const {
+    return _cena;
 }
 
-void Produkt::przegladaj() {
-	throw "Not yet implemented";
+int Produkt::getIlosc() const {
+    return _iloscWMagazynie;
 }
 
+// Implementacja metody zmieniającej stan magazynowy
+void Produkt::zmniejszStan(int ile) {
+    if (ile > 0 && _iloscWMagazynie >= ile) {
+        _iloscWMagazynie -= ile;
+    } else {
+        // Opcjonalnie: obsługa błędu, jeśli próbujemy odjąć więcej niż mamy
+        // cerr << "Blad: Nie mozna zmniejszyc stanu o " << ile << endl;
+    }
+}
