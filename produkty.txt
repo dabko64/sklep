@@ -1,0 +1,5 @@
+Pluszowy krolik;39.99;30;
+Pluszowy niedzwiedz;55;4;
+Pluszowa panda;49.99;7;
+Pluszowa malpka;49.99;45;
+Pluszowa kaczka;39.99;0;
