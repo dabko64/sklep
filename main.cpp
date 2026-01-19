@@ -1,5 +1,6 @@
-#include "SystemLogowania.h"
+#include "StstemLogowania.h"
 #include "Klient.h"
+#include "Przegladanie_produktow.h"
 #include "Sprzedawca.h" // Dodane, aby kompilator znał klasę sprzedawcy
 //#include "Zamowienie.h"
 #include <iostream>
@@ -7,7 +8,7 @@
 using namespace std;
 
 int main() {
-    SystemLogowania system;
+    StstemLogowania system;
     Klient* aktualnyUzytkownik = nullptr;
 
     cout << "--- WITAJ W SKLEPIE ---" << endl;
@@ -21,6 +22,16 @@ int main() {
 
     // Tutaj użytkownik (Klient) jest już zalogowany
     aktualnyUzytkownik->zalogujSie();
+
+    int akcja = 0;
+    while (akcja != 3) {
+        cout << "\n1 - Przegladaj produkty\n2 - Szukaj produktu po nazwie\n3 - Wyjdz\nWybor: ";
+        cin >> akcja;
+
+        Przegladanie_produktow p;
+        if (akcja == 1) p.wyswietlWszystkie();
+        else if (akcja == 2) p.wyszukajProdukt();
+    }
 
     // Wywoływanie metod Klienta
     aktualnyUzytkownik->przejdzDoKoszyka();

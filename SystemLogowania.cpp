@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include "Sprzedawca.h"
+#include "Przegladanie_produktow.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ Klient* SystemLogowania::menu() {
     cout << "1 - rejestracja\n";
     cout << "2 - logowanie (klient)\n";
     cout << "3 - logowanie (sprzedawca)\n"; // NOWA OPCJA
+    cout << "4 - przegladaj bez logowania (gosc)\n";
     cout << "wybor: ";
     // Zabezpieczenie przed wpisaniem litery w menu
     if (!(cin >> wybor)) {
@@ -73,6 +75,26 @@ Klient* SystemLogowania::menu() {
             delete s; // Sprzatanie pamieci po wylogowaniu
         }
         return nullptr; // Powrot do glownego menu (1-rejestracja, 2-logowanie...)
+    }
+	if (wybor == 4) {
+		Przegladanie_produktow przegladanie;
+        int akcja = 0; // Zmieniona nazwa, żeby nie było konfliktu
+        cout << "\n--- TRYB GOSCIA ---\n";
+        cout << "1 - Wyswietl wszystko, 2 - Szukaj produktu: ";
+
+        if (!(cin >> akcja)) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            return nullptr;
+        }
+
+        if (akcja == 1) {
+            przegladanie.wyswietlWszystkie();
+        }
+        else if (akcja == 2) {
+            przegladanie.wyszukajProdukt();
+        }
+        return nullptr;
     }
 }
 // Metoda sprawdzająca czy login już istnieje w pliku
@@ -293,8 +315,8 @@ bool SystemLogowania::sprawdzWLiniiSprzedawcy(const string& linia, const string&
 }
 // --- Zakomentowane metody Paradigm ---
 /*
-void StstemLogowania::sprawdzPoprawnosc() { throw "Not yet implemented"; }
-void StstemLogowania::przejdzDoKonta() { throw "Not yet implemented"; }
-void StstemLogowania::zatwierdzKonto() { throw "Not yet implemented"; }
-void StstemLogowania::autoryzacja() { throw "Not yet implemented"; }
+void SystemLogowania::sprawdzPoprawnosc() { throw "Not yet implemented"; }
+void SystemLogowania::przejdzDoKonta() { throw "Not yet implemented"; }
+void SystemLogowania::zatwierdzKonto() { throw "Not yet implemented"; }
+void SystemLogowania::autoryzacja() { throw "Not yet implemented"; }
 */
