@@ -18,7 +18,7 @@ class Zamowienie;
 class Zamowienie
 {
 	private: double _idZamowienia;
-	private: date _dataZlozenia;
+	private: string _dataZlozenia;
 	private: string _status;
 	private: double _kwota;
 	public: Koszyk* _unnamed_Koszyk_;
@@ -26,7 +26,7 @@ class Zamowienie
 	public: std::vector<Magazyn*> _unnamed_Magazyn_;
 
 	public: void utworzZamowienie();
-
+	Zamowienie(string login = "", double kwota = 0.0);
 	public: void zmienStatus();
 
 	public: void przekazDoMagazynu();
