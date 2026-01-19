@@ -1,4 +1,4 @@
-#include "StstemLogowania.h"
+#include "SystemLogowania.h"
 #include "Klient.h"
 #include "Przegladanie_produktow.h"
 #include "Sprzedawca.h" // Dodane, aby kompilator znał klasę sprzedawcy
@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    StstemLogowania system;
+    SystemLogowania system;
     Klient* aktualnyUzytkownik = nullptr;
 
     cout << "--- WITAJ W SKLEPIE ---" << endl;
