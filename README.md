@@ -1,35 +1,45 @@
-# sklep
-# opis projektu (visual paradigm na cpp)
-Nasz kod został częściowo wygenerowany przez Visual Paradigm. W aplikacji tej sukcesywnie dodawałyśmy coraz to nowsze aktualizacje w oparciu o wykłady. Nasz plik w VP jest podzielony na Use Case Diagram, Class Diagram, Sequence Diagram, State Machine Diagram, Activity Diagram, Component Diagram oraz na Deployment Diagram. 
-Nasz projekt dotyczy platformy do zakupów
+# Store
 
-INSTRUKCJA
-1. Start i Wybór Akcji Po uruchomieniu programu klasa SystemLogowania wyświetla menu główne. Użytkownik ma do wyboru cztery ścieżki:
--Rejestracja (nowy klient)
--Logowanie jako Klient (istniejący użytkownik).
--Logowanie jako Sprzedawca (obsługa magazynu).
--Przeglądanie jako Gość (bez logowania).
+# Project description (Visual Paradigm in C++)
 
-2.1. Rejestracja (Klasa Gosc / SystemLogowania) 
-System prosi o podanie loginu, hasła, e-maila oraz danych osobowych (imię, nazwisko, adres, telefon).
-Weryfikacja: System sprawdza w pliku klienci.txt, czy login lub e-mail nie są już zajęte.
-Zapis: Po pozytywnej weryfikacji dane są dopisywane do pliku klienci.txt.
+Our code was partially generated using Visual Paradigm. In this application, we gradually added new updates based on the topics discussed during lectures. Our Visual Paradigm file is divided into: Use Case Diagram, Class Diagram, Sequence Diagram, State Machine Diagram, Activity Diagram, Component Diagram, and Deployment Diagram.
 
-2.2. Logowanie (Klasa Klient / SystemLogowania)  
-Użytkownik podaje login i hasło. System przeszukuje plik klienci.txt.
-Jeśli dane są poprawne, tworzony jest dynamiczny obiekt klasy Klient, który dziedziczy po klasie Gosc. System "pamięta" zalogowanego użytkownika przez cały czas trwania sesji.
+Our project concerns an online shopping platform.
 
-3. Panel Klienta
-Po zalogowaniu Klient może korzystać z przeglądania i wyszukiwania: Klasa Przegladanie_produktow pozwala wyświetlić listę z pliku produkty.txt lub szukać konkretnego towaru po nazwie (sprawdzając cenę i dostępność).
+## INSTRUCTION
 
-4. Panel Sprzedawcy (Klasa Sprzedawca)
-Jeśli użytkownik zaloguje się danymi z pliku sprzedawcy.txt:
-- Zyskuje dostęp do metod modyfikacji bazy danych.
-- Dodawanie: Może dopisać nowy produkt do pliku produkty.txt.
-- Modyfikacja: Może zmienić cenę istniejącego produktu lub zaktualizować stan magazynowy (ilość sztuk).
-- Usuwanie: Pozwala usunąć produkt, którego nie ma już w ofercie.
+### 1. Start and Action Selection
 
-5. Przechowywanie Danych System jest trwały dzięki wykorzystaniu plików tekstowych:
-- klienci.txt – baza użytkowników.
-- produkty.txt – baza towarów.
-- sprzedawcy.txt – uprawnienia administracyjne.
+After launching the program, the `SystemLogowania` class displays the main menu. The user can choose one of four paths:
+
+- Registration as a new customer
+- Logging in as a Customer, for an existing user
+- Logging in as a Seller, for warehouse/product management
+- Browsing as a Guest, without logging in
+
+### 2.1. Registration (`Gosc` / `SystemLogowania` class)
+
+The system asks the user to enter a login, password, e-mail address, and personal data, such as first name, surname, address, and phone number.
+
+Verification: The system checks the `klienci.txt` file to verify whether the login or e-mail address is already taken.
+
+Saving data: If the verification is successful, the user’s data is added to the `klienci.txt` file.
+
+### 2.2. Login (`Klient` / `SystemLogowania` class)
+
+The user enters their login and password. The system searches the `klienci.txt` file.
+
+If the data is correct, a dynamic object of the `Klient` class is created. This class inherits from the `Gosc` class. The system keeps information about the logged-in user throughout the whole session.
+
+### 3. Customer Panel
+
+After logging in, the Customer can browse and search for products. The `Przegladanie_produktow` class allows the user to display the product list from the `produkty.txt` file or search for a specific product by name, checking its price and availability.
+
+### 4. Seller Panel (`Sprzedawca` class)
+
+If the user logs in using data from the `sprzedawcy.txt` file:
+
+- They gain access to database modification methods.
+- Adding products: The seller can add a new product to the `produkty.txt` file.
+- Modification: The seller can change the price of an existing product or update the stock level, meaning the number of available items.
+- Deleting products: The seller can remove a product that is no longer available in the offer.
